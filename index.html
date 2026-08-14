@@ -11,18 +11,20 @@
         <h1>Bem-vindo(a)</h1>
         <div class="inputEmail">
             <label for="email">Email:</label><br>
-            <input name="email" type="email" placeholder="seu@email.com">
+            <input id="email" name="email" type="email" placeholder="seu@email.com" onchange="validateFields()">
         </div>
         <div class="inputSenha">
             <label for="senha">Senha:</label><br>
-            <input name="senha" type="password" placeholder="Senha">
+            <input id="senha" name="senha" type="password" placeholder="Senha">
             <br>
-            <button type="button">Recuperar Senha</button>
+            <button type="button" disabled="true" id="recover-password-button">Recuperar Senha</button>
         </div>
         <div class="buttons">
-            <button type="button" onclick="">Entrar</button><br>
-            <button type="button" class="registro">Registrar-se</button>
+            <button type="button" onclick="" disabled="true" id="login-button">Entrar</button><br>
+            <button type="button" class="registro" disabled="true">Registrar-se</button>
         </div>
     </form>
+
+    <script src="index.js"></script>
 </body>
 </html>
