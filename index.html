@@ -11,11 +11,15 @@
         <h1>Bem-vindo(a)</h1>
         <div class="inputEmail">
             <label for="email">Email:</label><br>
-            <input id="email" name="email" type="email" placeholder="seu@email.com" onchange="validateFields()">
+            <input id="email" name="email" type="email" placeholder="seu@email.com" onchange="onChangeEmail()">
+            <div class="error" id="email-required-error">Email é obrigatório!</div>
+            <div class="error" id="email-invalid-error">Email inválido!</div>
         </div>
         <div class="inputSenha">
             <label for="senha">Senha:</label><br>
-            <input id="senha" name="senha" type="password" placeholder="Senha">
+            <input id="senha" name="senha" type="password" placeholder="Senha" onchange="onChangePassword()">
+            <div class="error" id="password-required-error">Senha é obrigatório!</div>
+            <div class="error" id="password-invalid-error">Senha inválida!</div>
             <br>
             <button type="button" disabled="true" id="recover-password-button">Recuperar Senha</button>
         </div>
@@ -26,5 +30,6 @@
     </form>
 
     <script src="index.js"></script>
+    <script src="validations.js"></script>
 </body>
 </html>
