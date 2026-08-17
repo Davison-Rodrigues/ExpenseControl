@@ -21,6 +21,6 @@ function isPasswordValid(){
     } return true;
 }
 
-function validateEmail(email){ //VERIFICAÇÃO SE EMAIL É ÚTIL
+function validateEmail(email){ //VERIFICAÇÃO DE EMAIL
     return /\S+@\S+\.\S+/.test(email);
 }
