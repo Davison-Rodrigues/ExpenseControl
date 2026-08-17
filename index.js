@@ -53,3 +53,11 @@ function isPasswordValid() {
         return false;
     } return true;
 }
+
+function login() {
+    window.location.href = "home.html";
+}
+
+function register() {
+    window.location.href = "register.html";
+}

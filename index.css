@@ -102,6 +102,10 @@ form input:focus::placeholder{
     opacity: 0.7;
 }
 
+#login-button[disabled]{
+    opacity: 0.7;
+}
+
 .error {
     color: white;
     background-color: #F0516F;
