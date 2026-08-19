@@ -66,6 +66,16 @@ function login() {
 
 }
 
+function recoverPassword(){
+    showLoading();
+    firebase.auth().sendPasswordResetEmail(form.email().value).then(() => {
+        hideLoading();
+        alert("Enviado para o " +form.email().value +  " com sucesso!");
+    }).catch(error => {
+        hideLoading();
+        alert("Email inválido");
+    });
+}
 
 function register() {
     window.location.href = "register.html";

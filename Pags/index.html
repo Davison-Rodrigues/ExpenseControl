@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="">
+    <form>
         <h1>Bem-vindo(a)</h1>
         <div class="inputEmail">
             <label for="email">Email:</label><br>
@@ -23,7 +23,7 @@
             <div class="error" id="password-required-error">Senha é obrigatório!</div>
             <div class="error" id="password-invalid-error">Senha inválida!</div>
             <br>
-            <button type="button" disabled="true" id="recover-password-button">Recuperar Senha</button>
+            <button type="button" disabled="true" id="recover-password-button" onclick="recoverPassword()">Recuperar Senha</button>
         </div>
         <div class="buttons">
             <button type="button" onclick="login()" disabled="true" id="login-button">Entrar</button><br>

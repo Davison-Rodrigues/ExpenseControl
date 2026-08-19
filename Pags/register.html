@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
     <title>Registrar</title>
 </head>
+
 <body>
-    registro
+    <form action="">
+        <h1>Bem-vindo(a)</h1>
+        <div class="inputEmail">
+            <label for="email">Email:</label><br>
+            <input id="email" name="email" type="email" placeholder="seu@email.com" onchange="onChangeEmail()">
+            <div class="error" id="email-required-error">Email é obrigatório!</div>
+            <div class="error" id="email-invalid-error">Email inválido!</div>
+        </div>
+        <div class="inputSenha">
+            <label for="senha">Senha:</label><br>
+            <input id="senha" name="senha" type="password" placeholder="Senha" onchange="onChangePassword()">
+            
+        </div>
+        <div class="inputSenha">
+            <label for="senha">Digite novamente:</label><br>
+            <input type="password" name="password" placeholder="Sua senha">
+        </div>
+        <div class="buttons">
+            <button type="button" onclick="">Cadastrar</button><br>
+            <button type="button" onclick="">Voltar para o Login</button>
+        </div>
+    </form>
 </body>
+<script src="../js/index.js"></script>
+<script src="../js/validations.js"></script>
+
 </html>
