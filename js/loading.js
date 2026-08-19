@@ -13,6 +13,6 @@ function showLoading() {
 function hideLoading(){
     const loadings = document.getElementsByClassName("loading");
     if (loadings.length){
-        loading
+        loadings[0].remove();
     }
 }

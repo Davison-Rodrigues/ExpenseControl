@@ -55,15 +55,18 @@ function isPasswordValid() {
 }
 
 function login() {
+    showLoading();
     firebase.auth().signInWithEmailAndPassword(form.email().value, form.senha().value).then(response => {
-        console.log("Success", response)
+        hideLoading();
         window.location.href = "home.html";
     }).catch(error =>{
+        hideLoading();
         alert('Usuário não econtrado!');
     });
+
 }
 
 
 function register() {
-    showLoading();
+    window.location.href = "register.html";
 }
