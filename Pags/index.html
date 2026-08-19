@@ -30,22 +30,22 @@
             <button type="button" class="registro" onclick="register()">Registrar-se</button>
         </div>
     </form>
-
-    <script src="../index.js"></script>
-    <script src="../validations.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/12.17.1/firebase-app-compact.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/12.17.1/firebase-auth-compact.js"></script>
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyB6JN54i6c4XlLQzVPYhDjXWZkS_ogYjYg",
-            authDomain: "control-gastop.firebaseapp.com",
-            projectId: "control-gastop",
-            storageBucket: "control-gastop.firebasestorage.app",
-            messagingSenderId: "964180905335",
-            appId: "1:964180905335:web:b83e5f2cfe8b2a3e846572"
-        };
-        const fisebase = initializeApp(firebaseConfig);
-    </script>
 </body>
+<script src="../js/index.js"></script>
+<script src="../js/validations.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.17.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.17.1/firebase-auth-compat.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyB6JN54i6c4XlLQzVPYhDjXWZkS_ogYjYg",
+        authDomain: "control-gastop.firebaseapp.com",
+        projectId: "control-gastop",
+        storageBucket: "control-gastop.firebasestorage.app",
+        messagingSenderId: "964180905335",
+        appId: "1:964180905335:web:b83e5f2cfe8b2a3e846572"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
+<script src="../js/loading.js"></script>
 
 </html>
