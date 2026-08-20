@@ -13,7 +13,7 @@
         <h1>Bem-vindo(a)</h1>
         <div class="inputEmail">
             <label for="email">Email:</label><br>
-            <input id="email" name="email" type="email" placeholder="seu@email.com" onchange="onChangeEmail()">
+            <input id="email" name="email" type="email" placeholder="seu@email.com" onchange="onChangeEmail()" autocomplete="off">
             <div class="error" id="email-required-error">Email é obrigatório!</div>
             <div class="error" id="email-invalid-error">Email inválido!</div>
         </div>
@@ -27,7 +27,7 @@
         </div>
         <div class="buttons">
             <button type="button" onclick="login()" disabled="true" id="login-button">Entrar</button><br>
-            <button type="button" class="registro" onclick="register()">Registrar-se</button>
+            <button type="button" class="registro" onclick="goRegister()">Registrar-se</button>
         </div>
     </form>
 </body>
@@ -35,17 +35,7 @@
 <script src="../js/validations.js"></script>
 <script src="https://www.gstatic.com/firebasejs/12.17.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/12.17.1/firebase-auth-compat.js"></script>
-<script>
-    const firebaseConfig = {
-        apiKey: "AIzaSyB6JN54i6c4XlLQzVPYhDjXWZkS_ogYjYg",
-        authDomain: "control-gastop.firebaseapp.com",
-        projectId: "control-gastop",
-        storageBucket: "control-gastop.firebasestorage.app",
-        messagingSenderId: "964180905335",
-        appId: "1:964180905335:web:b83e5f2cfe8b2a3e846572"
-    };
-    firebase.initializeApp(firebaseConfig);
-</script>
+<script src="../js/firebaseInit.js"></script>
 <script src="../js/loading.js"></script>
 
 </html>

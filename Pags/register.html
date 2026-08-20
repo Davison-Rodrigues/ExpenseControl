@@ -13,11 +13,11 @@
         <h1>Bem-vindo(a)</h1>
         <div class="inputEmail">
             <label for="email">Email:</label><br>
-            <input name="email" type="email" placeholder="seu@email.com">
+            <input id="email" name="email" type="email" placeholder="seu@email.com" autocomplete="off">
         </div>
         <div class="inputSenha">
             <label for="senha">Senha:</label><br>
-            <input name="senha" type="password" placeholder="Senha">
+            <input id="senha" name="senha" type="password" placeholder="Senha">
             
         </div>
         <div class="inputSenha">
@@ -25,12 +25,16 @@
             <input type="password" name="password" placeholder="Sua senha">
         </div>
         <div class="buttons">
-            <button type="button" onclick="">Cadastrar</button><br>
-            <button type="button" onclick="">Voltar para o Login</button>
+            <button type="button" id="register-button" onclick="register()">Cadastrar</button><br>
+            <button type="button" onclick="pagLogin()">Voltar para o Login</button>
         </div>
     </form>
 </body>
 <script src="../js/index.js"></script>
 <script src="../js/validations.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.17.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.17.1/firebase-auth-compat.js"></script>
+<script src="../js/firebaseInit.js"></script>
+<script src="../js/loading.js"></script>
 
 </html>

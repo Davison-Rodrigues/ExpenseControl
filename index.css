@@ -106,6 +106,10 @@ form input:focus::placeholder{
     opacity: 0.7;
 }
 
+#register-button[disabled]{
+    opacity: 0.7;
+}
+
 .error {
     color: white;
     background-color: #F0516F;

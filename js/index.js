@@ -77,6 +77,42 @@ function recoverPassword(){
     });
 }
 
-function register() {
+function goRegister() {
     window.location.href = "register.html";
 }
+
+function pagLogin(){
+    window.location.href = "index.html";
+}
+
+function register(){
+    showLoading();
+    const email = form.email().value;
+    const senha = form.senha().value;
+    firebase.auth().createUserWithEmailAndPassword(
+        email, senha
+    ).then(() => {
+        hideLoading();
+        window.location.href ="home.html";
+    }).catch(error => {
+        hideLoading();
+        alert(getErrorMessage(error));
+    });
+}
+
+function getErrorMessage(error){ //Pega código de erro error.code para mostrar msg personalizada.
+    if (error.code =='auth/email-already-in-use'){
+        return "Email já está em uso!";
+    }
+    else if (error.code == 'auth/weak-password'){
+        return "Senha fraca!";
+    }
+    return error.message;
+}
+
+
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        window.location.href ='home.html';
+    }
+})
