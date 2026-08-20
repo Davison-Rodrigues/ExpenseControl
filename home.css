@@ -45,3 +45,53 @@ header h4 {
 #buttonLogOut:hover {
     background-color: #c42b47;
 }
+
+ol {
+    list-style-type: none;
+}
+
+ol p {
+    margin: 4px 0;
+}
+
+ol li {
+    cursor: pointer;
+    padding: 8px 16px;
+    border-bottom: 1px solid grey;
+}
+
+ol li:hover {
+    opacity: 0.7;
+}
+
+ol li.expense {
+    border-left: 10px solid #F0516F;
+}
+
+ol li.income {
+    border-left: 10px solid rgba(1, 187, 1, 0.651);
+}
+
+
+.fab {
+    width: 54px;
+    height: 54px;
+    border: none;
+    border-radius: 50px;
+    font-size: 24px;
+    background-color: #F2AA1B;
+    color: white;
+    box-shadow: 1px 2px 3px rgb(165, 165, 165);
+}
+
+button.fab.fixed {
+    position: fixed;
+}
+
+button.fab.bottom {
+    bottom: 32px;
+}
+
+button.fab.right {
+    right: 32px;
+}
