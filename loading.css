@@ -1,0 +1,12 @@
+.loading {
+    background-color: rgb(197, 195, 195, 0.4);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    color: #143A40;
+    text-transform: uppercase;
+}
