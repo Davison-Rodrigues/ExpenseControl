@@ -6,12 +6,28 @@ function logOut(){
     });
 }
 
-findTransactions();
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        findTransactions(user);
+    }
+});
 
-function findTransactions(){
-    firebase.firestore().collection('transactions').get().then(snapshot =>{
+function findTransactions(user){
+    showLoading();
+    firebase.firestore()
+    .collection('transactions')
+    .where('user.uid', '==', user.uid)
+    .orderBy('date', 'desc')
+    .get()
+    .then(snapshot =>{
+        hideLoading();
         const transactions = snapshot.docs.map(doc => doc.data());
         addTransactionsToScreen(transactions)
+    }).catch(error => {
+        hideLoading();
+        console.log(error.code);
+        console.log(error.message)
+        alert("Erro ao recuperar transações!!");
     })
 }
 
