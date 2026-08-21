@@ -9,9 +9,10 @@ function logOut(){
 findTransactions();
 
 function findTransactions(){
-    setTimeout(() => {
-        addTransactionsToScreen(fakeTransactions);
-    }, 1000)
+    firebase.firestore().collection('transactions').get().then(snapshot =>{
+        const transactions = snapshot.docs.map(doc => doc.data());
+        addTransactionsToScreen(transactions)
+    })
 }
 
 function addTransactionsToScreen(transactions){
@@ -48,45 +49,3 @@ function formatarData(date){
 function formatarMoney(money){
     return `${money.currency} ${money.value.toFixed(2)}`
 }
-
-const fakeTransactions = [
-    {
-        type: 'expense',
-        date: '2025-06-29',
-        money: {
-            currency: 'R$',
-            value: 10
-        },
-        transactionType: 'Transporte',
-        description: 'Ida e Volta'
-    },
-    {
-        type: 'income',
-        date: '2022-02-03',
-        money: {
-            currency: 'R$',
-            value: 90
-        },
-        transactionType: 'Pix'
-    },
-    {
-        type: 'expense',
-        date: '2021-12-05',
-        money: {
-            currency: 'R$',
-            value: 40
-        },
-        transactionType: 'Mecânica',
-        description: 'Empresa A'
-    },
-    {
-        type: 'expense',
-        date: '2021-04-02',
-        money: {
-            currency: 'R$',
-            value: 10
-        },
-        transactionType: 'Padária',
-        description: 'Empresa B'
-    }
-];
