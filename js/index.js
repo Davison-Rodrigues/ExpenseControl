@@ -70,7 +70,7 @@ function recoverPassword(){
     showLoading();
     firebase.auth().sendPasswordResetEmail(form.email().value).then(() => {
         hideLoading();
-        alert("Enviado para o " +form.email().value +  " com sucesso!");
+        alert("Email de recuperação enviado com sucesso para " + form.email().value);
     }).catch(error => {
         hideLoading();
         alert("Email inválido");
