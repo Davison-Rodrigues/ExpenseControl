@@ -5,7 +5,10 @@ const form = {
     valueRequired: () => document.getElementById('value-required-error'),
     transactionType: () => document.getElementById('transactionType'),
     transactionTRequired: () => document.getElementById('transactionType-required-error'),
-    saveButton: () => document.getElementById('saveButton')
+    saveButton: () => document.getElementById('saveButton'),
+    typeExpense: () => document.getElementById('expense'),
+    currency: () => document.getElementById('currency'),
+    description: () => document.getElementById('description')
 }
 
 
@@ -15,14 +18,38 @@ function logOut(){
     }).catch(error =>{
         alert('Erro ao fazer LogOut!');
     });
-} 
+}
 
-firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-        findTransactions(user);
+
+function saveTransaction(){
+    showLoading();
+    const transaction = createTransaction();
+    firebase.firestore()
+        .collection('transactions')
+        .add(transaction).then(() => {
+            hideLoading();
+            alert("Transação adicionada com sucesso!");
+        }).catch(() => {
+            hideLoading();
+            alert("Erro ao adicionar transação")
+        })
+}
+
+function createTransaction(){
+    return {
+        type: form.typeExpense().checked ? "expense" : "income",
+        date: form.date().value,
+        money: {
+            currency: form.currency().value,
+            value: parseFloat(form.value().value)
+        },
+        transactionType: form.transactionType().value,
+        description: form.description().value,
+        user: {
+            uid: firebase.auth().currentUser.uid
+        }
     }
-});
-
+}
 
 function onChangeDate(){
     const date = form.date().value;
