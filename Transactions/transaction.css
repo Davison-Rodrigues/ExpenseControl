@@ -117,3 +117,20 @@ form input {
     color: white;
     margin-top: 10px;
 }
+
+
+.error {
+    background-color: #F0516F;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    margin: 5px;
+    text-transform: uppercase;
+    display: none;
+}
+
+
+button[disabled] {
+    color: #c42b47;
+    opacity: 0.7;
+}

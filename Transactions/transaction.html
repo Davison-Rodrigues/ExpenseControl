@@ -13,30 +13,36 @@
     </header>
     <form>
         <div class="formField transaction">
-            <div class="divLabel"><label>Transação</label></div>
+            <div class="divLabel"><label>Transação *</label></div>
             <input type="radio" name="type" id="expense" checked><label for="expense">Despesa</label>
             <input type="radio" name="type" id="income"><label for="income">Receita</label>
         </div>
         <div class="formField">
-            <div class="divLabel"><label>Data da transação</label></div>
-            <input type="date"> 
+            <div class="divLabel"><label>Data da transação *</label></div>
+            <input id="date" type="date" onchange="onChangeDate()">
+            <div class="error" id="date-required-error">
+                Data inválida!
+            </div> 
         </div>
         <div class="formField moeda">
-            <div class="divLabel"><label>Moeda</label></div>
+            <div class="divLabel"><label>Moeda *</label></div>
             <select>
-                <option selected>Real</option>
-                <option>Dólar</option>
-                <option>Euro</option>
+                <option value="BRL" selected>Real</option>
+                <option value="USD">Dólar</option>
+                <option value="EUR">Euro</option>
             </select>
         </div>
         <div class="formField">
-            <div class="divLabel"><label>Valor</label></div>
-            <input type="number"> 
+            <div class="divLabel"><label>Valor *</label></div>
+            <input type="number" id="value" onchange="onChangeValue()">
+            <div class="error" id="value-required-error">
+                Valor inválida!
+            </div> 
         </div>
         <div class="formField typeTransaction">
-            <div class="divLabel"><label>Tipo de transação</label></div>
-            <select>
-                <option>--Selectione um tipo de Transação--</option>
+            <div class="divLabel"><label>Tipo de transação *</label></div>
+            <select id="transactionType" onchange="onChangeTransactionType()">
+                <option value="">--Selectione um tipo de Transação--</option>
                 <option>Salário</option>
                 <option>Alimentação</option>
                 <option>Transporte</option>
@@ -44,13 +50,16 @@
                 <option>Acomodação</option>
                 <option>Outros..</option>
             </select>
+            <div class="error" id="transactionType-required-error">
+                Este campo é Obrigatório!
+            </div> 
         </div>
         <div class="formField">
             <div class="divLabel"><label>Descrição</label></div>
             <input type="text">
         </div>
 
-        <button type="button" class="solid">Salvar</button>
+        <button type="button" class="solid" disabled id="saveButton">Salvar</button>
         <button type="button" class="outline">Cancelar</button>
     </form>
 </body>
