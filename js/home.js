@@ -65,3 +65,8 @@ function formatarData(date){
 function formatarMoney(money){
     return `${money.currency} ${money.value.toFixed(2)}`
 }
+
+
+function newTransaction(){
+    window.location.href = "../Transactions/transaction.html";
+}

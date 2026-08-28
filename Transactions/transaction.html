@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./transaction.css">
+    <title>Transações</title>
+</head>
+<body>
+    <header>
+        <h4>Transações</h4>
+        <button type="button" onclick="logOut()" id="buttonLogOut">Sair</button>
+    </header>
+    <form>
+        <div class="formField transaction">
+            <div class="divLabel"><label>Transação</label></div>
+            <input type="radio" name="type" id="expense" checked><label for="expense">Despesa</label>
+            <input type="radio" name="type" id="income"><label for="income">Receita</label>
+        </div>
+        <div class="formField">
+            <div class="divLabel"><label>Data da transação</label></div>
+            <input type="date"> 
+        </div>
+        <div class="formField moeda">
+            <div class="divLabel"><label>Moeda</label></div>
+            <select>
+                <option selected>Real</option>
+                <option>Dólar</option>
+                <option>Euro</option>
+            </select>
+        </div>
+        <div class="formField">
+            <div class="divLabel"><label>Valor</label></div>
+            <input type="number"> 
+        </div>
+        <div class="formField typeTransaction">
+            <div class="divLabel"><label>Tipo de transação</label></div>
+            <select>
+                <option>--Selectione um tipo de Transação--</option>
+                <option>Salário</option>
+                <option>Alimentação</option>
+                <option>Transporte</option>
+                <option>Supermercado</option>
+                <option>Acomodação</option>
+                <option>Outros..</option>
+            </select>
+        </div>
+        <div class="formField">
+            <div class="divLabel"><label>Descrição</label></div>
+            <input type="text">
+        </div>
+
+        <button type="button" class="solid">Salvar</button>
+        <button type="button" class="outline">Cancelar</button>
+    </form>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/12.17.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.17.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore-compat.js"></script>
+<script src="../js/firebaseInit.js"></script>
+<script src="../js/authGuard.js"></script>
+<script src="../js/loading.js"></script>
+<script src="transaction.js"></script>
+</html>
