@@ -15,7 +15,7 @@ const form = {
 
 function logOut() {
     firebase.auth().signOut().then(() => {
-        window.location.href = "../Pags/index.html";
+        window.location.href = "../index.html";
     }).catch(error => {
         alert('Erro ao fazer LogOut!');
     });
@@ -44,12 +44,12 @@ function findTransactionsByUid(uid) {
             toggleSaveButtonDisabled();
         } else {
             alert("Não encontrado");
-            window.location.href = "../Pags/home.html";
+            window.location.href = "../home.html";
         }
     }).catch(() => {
         hideLoading();
         alert("Erro ao recuperar documento!");
-        window.location.href = "../Pags/home.html";
+        window.location.href = "../home.html";
     })
 }
 
@@ -77,7 +77,7 @@ function save(transaction) {
     .add(transaction).then(() => {
         hideLoading();
         alert("Transação adicionada com sucesso!");
-        window.location.href = "../Pags/home.html";
+        window.location.href = "../home.html";
     }).catch(() => {
         hideLoading();
         alert("Erro ao adicionar transação")
@@ -100,7 +100,7 @@ function update(transaction){
     showLoading();
     firebase.firestore().collection('transactions').doc(getTransactionUid()).update(transaction).then(() => {
         hideLoading();
-        window.location.href = "../Pags/home.html";
+        window.location.href = "../home.html";
     }).catch(() => {
         hideLoading();
         alert("Erro ao atualizar trasação!");
@@ -167,5 +167,5 @@ function isFormValid() {
 
 
 function cancelar() {
-    window.location.href = "../Pags/home.html";
+    window.location.href = "../home.html";
 }

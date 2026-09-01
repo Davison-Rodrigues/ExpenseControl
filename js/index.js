@@ -58,7 +58,7 @@ function login() {
     showLoading();
     firebase.auth().signInWithEmailAndPassword(form.email().value, form.senha().value).then(response => {
         hideLoading();
-        window.location.href = "../Pags/home.html";
+        window.location.href = "./home.html";
     }).catch(error =>{
         hideLoading();
         alert('Usuário não econtrado!');
@@ -78,11 +78,11 @@ function recoverPassword(){
 }
 
 function goRegister() {
-    window.location.href = "../Pags/register.html";
+    window.location.href = "./register.html";
 }
 
 function pagLogin(){
-    window.location.href = "../index.html";
+    window.location.href = "./index.html";
 }
 
 function register(){
@@ -93,7 +93,7 @@ function register(){
         email, senha
     ).then(() => {
         hideLoading();
-        window.location.href ="../Pags/home.html";
+        window.location.href ="./home.html";
     }).catch(error => {
         hideLoading();
         alert(getErrorMessage(error));
@@ -113,6 +113,6 @@ function getErrorMessage(error){ //Pega código de erro error.code para mostrar 
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
-        window.location.href ='home.html';
+        window.location.href ='./home.html';
     }
 })

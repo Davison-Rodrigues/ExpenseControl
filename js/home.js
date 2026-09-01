@@ -1,6 +1,6 @@
 function logOut(){
     firebase.auth().signOut().then( ()=> {
-        window.location.href = "../index.html";
+        window.location.href = "./index.html";
     }).catch(error =>{
         alert('Erro ao fazer LogOut!');
     });
@@ -80,7 +80,7 @@ function askToRemove(transaction) {
 
 function removerTransaction(transaction) {
     showLoading();
-    firebase.firestore().collection("transaction").doc(transaction.uid).delete().then(() => {
+    firebase.firestore().collection("transactions").doc(transaction.uid).delete().then(() => {
         hideLoading();
         document.getElementById(transaction.uid).remove();
     }).catch(error => {
