@@ -77,6 +77,7 @@ function save(transaction) {
     .add(transaction).then(() => {
         hideLoading();
         alert("Transação adicionada com sucesso!");
+        window.location.href = "../Pags/home.html";
     }).catch(() => {
         hideLoading();
         alert("Erro ao adicionar transação")
