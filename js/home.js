@@ -39,7 +39,7 @@ function addTransactionsToScreen(transactions){
         li.classList.add(transaction.type);
         li.id = transaction.uid;
         li.addEventListener("click", () =>{
-            window.location.href = "../Transactions/transaction.html?uid="+ transaction.uid;
+            window.location.href = "./transaction.html?uid="+ transaction.uid;
         });
 
         const deletarButton = document.createElement('button');
@@ -100,5 +100,5 @@ function formatarMoney(money){
 
 
 function newTransaction(){
-    window.location.href = "../Transactions/transaction.html";
+    window.location.href = "./transaction.html";
 }
