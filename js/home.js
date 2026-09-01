@@ -21,7 +21,7 @@ function findTransactions(user){
     .get()
     .then(snapshot =>{
         hideLoading();
-        const transactions = snapshot.docs.map(doc => doc.data());
+        const transactions = snapshot.docs.map(doc => ({...doc.data(), uid: doc.id}));
         addTransactionsToScreen(transactions)
     }).catch(error => {
         hideLoading();
@@ -37,7 +37,9 @@ function addTransactionsToScreen(transactions){
     transactions.forEach(transaction => {
         const li = document.createElement('li');
         li.classList.add(transaction.type);
-        listaOrd.appendChild(li);
+        li.addEventListener("click", () =>{
+            window.location.href = "../Transactions/transaction.html?uid="+ transaction.uid;
+        });
 
         const date = document.createElement('p');
         date.innerHTML = formatarData(transaction.date);
@@ -54,7 +56,8 @@ function addTransactionsToScreen(transactions){
         if (transaction.description){const description = document.createElement('p');
         description.innerHTML = transaction.description;
         li.appendChild(description);}
-
+        
+        listaOrd.appendChild(li);
     }); 
 }
 
