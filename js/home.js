@@ -43,7 +43,7 @@ function addTransactionsToScreen(transactions){
         });
 
         const deletarButton = document.createElement('button');
-        deletarButton.innerHTML = 'Remover';
+        deletarButton.innerHTML = 'X';
         deletarButton.classList.add('outline');
         deletarButton.addEventListener('click', event =>{
             event.stopPropagation();

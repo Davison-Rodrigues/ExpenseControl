@@ -107,10 +107,13 @@ button.fab.right {
 button.outline {
     width: auto;
     float: right;
-    display: none;
+
 }
 
 ol li:hover button.outline {
-    display: block;
-    opacity: 1;
+    background-color: white;
+    color: #c42b47;
+    border: 1px solid #c42b47;
+    cursor: pointer;
+    
 }
