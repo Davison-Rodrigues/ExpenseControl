@@ -31,7 +31,7 @@ function findTransactions(user){
     })
 }
 
-function addTransactionsToScreen(transactions){
+function naddTransactionsToScree(transactions){
     const listaOrd = document.getElementById("transactions");
 
     transactions.forEach(transaction => {
